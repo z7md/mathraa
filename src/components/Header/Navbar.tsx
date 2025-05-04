@@ -3,7 +3,6 @@ import { HiMenu, HiX } from "react-icons/hi";
 import { motion } from "framer-motion";
 //@ts-expect-error dsff
 import { fadeIn } from "../../utils/motion"
-// import Image from "../assets/logo.png";
 import { links} from "../../data";
 
 interface NavLink {
@@ -37,11 +36,11 @@ const Navbar: React.FC = () => {
           variants={fadeIn("right", 0.3)}
           className="flex items-center gap-1 cursor-pointer"
         >
-          <img
+          {/* <img
             src={Image}
             alt="Logo"
             style={{ width: "70px", height: "50px", objectFit: "cover" }}
-          />
+          /> */}
         </motion.div>
 
         {/* Mobile Menu Toggle */}

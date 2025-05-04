@@ -1,6 +1,5 @@
 import { useRental } from "../../context/RentalContext";
 import MapSelector from "../MapSelector";
-import logo from "../../assets/images/logo.svg";
 import bg from "../../assets/images/bg.png";
 import {selects } from "../../data";
 import Navbar from "./Navbar";

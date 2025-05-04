@@ -109,11 +109,11 @@ const Footer = () => {
 				<div className="hidden lg:flex items-center gap-7">
 					{links.map((item) => (
 						<a
-							href={item.path}
-							key={item.title}
+							href={item.href}
+							key={item.label}
 							className="text-white"
 						>
-							{item.title}
+							{item.label}
 						</a>
 					))}
 				</div>
