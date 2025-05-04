@@ -19,129 +19,159 @@ import s1 from "../assets/images/car.svg";
 import s2 from "../assets/images/save.svg";
 import s3 from "../assets/images/money.svg";
 import s4 from "../assets/images/cha.svg";
-import vt from "../assets/images/vt.svg";
+// import vt from "../assets/images/vt.svg";
 import loc from "../assets/images/loc.svg";
 import date from "../assets/images/date.svg";
 
 export const steps = [
-	{
-		id: "01",
-		title: "Choose A Vehicle",
-		description: "Sed euismod mauris corper libero.",
-	},
-	{
-		id: "02",
-		title: "Pick Location & Date",
-		description: "Nisi maecenas fermentum neque.",
-	},
-	{
-		id: "03",
-		title: "Book Your Car",
-		description: "Mauris corper accumsan urna sed.",
-	},
-	{
-		id: "04",
-		title: "Finish Process",
-		description: "Orci duis ut lectus metus nam sette.",
-	},
+  {
+    id: "01",
+    title: "اختر مركبة",
+    description: "اختر السيارة المناسبة لاحتياجاتك بكل سهولة.",
+  },
+  {
+    id: "02",
+    title: "حدد الموقع والتاريخ",
+    description: "اختر موقع الاستلام والتواريخ التي تناسبك.",
+  },
+  {
+    id: "03",
+    title: "احجز سيارتك",
+    description: "أكمل إجراءات الحجز بسرعة وبساطة.",
+  },
+  {
+    id: "04",
+    title: "أنهِ العملية",
+    description: "استلم سيارتك وانطلق بكل راحة.",
+  },
+
+
+
+
 ];
 
 export const brands = [
-	{ title: "HYUNDAI", image: c1 },
-	{ title: "JEEP", image: c2 },
-	{ title: "BMW", image: c3 },
-	{ title: "JEEP", image: c4 },
-	{ title: "FORD", image: c5 },
-	{ title: "RANGE ROVER", image: c6 },
+  { title: "HYUNDAI", image: c1 },
+  { title: "JEEP", image: c2 },
+  { title: "BMW", image: c3 },
+  { title: "JEEP", image: c4 },
+  { title: "FORD", image: c5 },
+  { title: "RANGE ROVER", image: c6 },
 ];
 
 export const types = [
-	{ title: "JEEP", price: "$29", image: t1 },
-	{ title: "MERCEDES", price: "$29", image: t2 },
-	{ title: "BMW", price: "$29", image: t3 },
-	{ title: "HYUNDAI", price: "$29", image: t4 },
-	{ title: "MERCEDES", price: "$29", image: t5 },
-	{ title: "FORD", price: "$29", image: t6 },
-	{ title: "FORD", price: "$29", image: t7 },
-	{ title: "BMW", price: "$29", image: t8 },
+  { title: "جييب", price: "29 ريال", image: t1, type: "نوع 1" },
+  { title: "مرسيدس", price: "29 ريال", image: t2, type: "نوع 1" },
+  { title: "بي ام دبليو", price: "29 ريال", image: t3, type: "نوع 2" },
+  { title: "هونداي", price: "29 ريال", image: t4, type: "نوع 2" },
+  { title: "مرسيدس", price: "29 ريال", image: t5, type: "نوع 2" },
+  { title: "فورد", price: "29 ريال", image: t6, type: "نوع 3" },
+  { title: "فورد", price: "29 ريال", image: t7, type: "نوع 3" },
+  { title: "بي ام دبليو", price: "29 ريال", image: t8, type: "نوع 3" },
 ];
 
 export const plans = [
-	{
-		title: "essential",
-		price: "$29.50",
-		services: [
-			"✓ Quisque rhoncus",
-			"✓ Lorem ipsum dolor",
-			"✓ Vivamus velit mir",
-			"✓ Velit mir",
-			"✓ Elit mir ivamus",
-		],
-	},
-	{
-		title: "recommended",
-		price: "$44.40",
-		services: [
-			"✓ Quisque rhoncus",
-			"✓ Lorem ipsum dolor",
-			"✓ Vivamus velit mir",
-			"✓ Elit mir ivamus",
-			"✓ Lorem ipsum dolor",
-			"✓ Ipsum dolor",
-		],
-	},
-	{
-		title: "pro",
-		price: "$70.50",
-		services: [
-			"✓ Quisque rhoncus",
-			"✓ Lorem ipsum dolor",
-			"✓ Vivamus velit mir",
-			"✓ Velit mir",
-			"✓ Elit mir ivamus",
-			"✓ Quisque rhoncus",
-			"✓ Vivamus velit mir",
-		],
-	},
+  {
+    title: "essential",
+    price: "$29.50",
+    services: [
+      "✓ Quisque rhoncus",
+      "✓ Lorem ipsum dolor",
+      "✓ Vivamus velit mir",
+      "✓ Velit mir",
+      "✓ Elit mir ivamus",
+    ],
+  },
+  {
+    title: "recommended",
+    price: "$44.40",
+    services: [
+      "✓ Quisque rhoncus",
+      "✓ Lorem ipsum dolor",
+      "✓ Vivamus velit mir",
+      "✓ Elit mir ivamus",
+      "✓ Lorem ipsum dolor",
+      "✓ Ipsum dolor",
+    ],
+  },
+  {
+    title: "pro",
+    price: "$70.50",
+    services: [
+      "✓ Quisque rhoncus",
+      "✓ Lorem ipsum dolor",
+      "✓ Vivamus velit mir",
+      "✓ Velit mir",
+      "✓ Elit mir ivamus",
+      "✓ Quisque rhoncus",
+      "✓ Vivamus velit mir",
+    ],
+  },
 ];
 
 export const posts = [
-	{ title: "Safest car rental services in 2024", date: "Feb 22,2024 / Tips", image: p1 },
-	{ title: "Best car collection in the world", date: "Feb 22,2024 / Tips", image: p2 },
-	{ title: "Which car is the best for travel", date: "Feb 22,2024 / Tips", image: p3 },
+  {
+    title: "Safest car rental services in 2024",
+    date: "Feb 22,2024 / Tips",
+    image: p1,
+  },
+  {
+    title: "Best car collection in the world",
+    date: "Feb 22,2024 / Tips",
+    image: p2,
+  },
+  {
+    title: "Which car is the best for travel",
+    date: "Feb 22,2024 / Tips",
+    image: p3,
+  },
 ];
 
 export const services = [
-	{ title: "Different cars", description: "Sed euismod mauris corper libero.", icon: s1 },
-	{ title: "Easy Booking", description: "Nisi maecenas fermentum neque.", icon: s2 },
-	{ title: "100% best rate", description: "Mauris corper accumsan urna sed.", icon: s3 },
-	{ title: "customer support", description: "Orci duis ut lectus metus nam sette.", icon: s4 },
+  {
+    title: "دعم العملاء",
+    description: "فريقنا متواجد دائمًا لمساعدتك على مدار الساعة.",
+    icon: s4,
+  },
+
+  {
+    title: "أفضل الأسعار 100%",
+    description: "نضمن لك أفضل الأسعار التنافسية في السوق.",
+    icon: s3,
+  },
+
+  {
+    title: "حجز سهل",
+    description: "إجراءات الحجز لدينا بسيطة وسريعة دون أي تعقيد.",
+    icon: s2,
+  },
+  {
+    title: "سيارات متنوعة",
+    description: "نوفر لك مجموعة واسعة من السيارات لتناسب جميع احتياجاتك.",
+    icon: s1,
+  },
 ];
 
 export const links = [
-	{ title: "Home", path: "/" },
-	{ title: "Booking", path: "/" },
-	{ title: "About", path: "/" },
-	{ title: "Cars", path: "/" },
-	{ title: "Blog", path: "/" },
-	{ title: "Contact", path: "/" },
+  { label: "الصفحة الرئيسية", href: "#home" },
+  { label: "الحجز", href: "#booking" },
+  { label: "من نحن", href: "#about" },
+  { label: "تواصل معنا", href: "#contact" },
 ];
-
 export const selects = [
-	{ title: "Vehicle Type", icon: vt, options: ["Select Car Group", "Car", "SUV", "Truck"] },
-	{
-		title: "Picking Up Location",
-		icon: loc,
-		options: ["Airport Or Anywhere", "Airport", "Home", "Work"],
-	},
-	{
-		title: "Picking Up Date",
-		icon: date,
-		options: ["Today", "Tommorow", "Next Week"],
-	},
-	{
-		title: "Returning Date",
-		icon: date,
-		options: ["Tommorow", "Today", "Next Week"],
-	},
+  {
+    title: "موقع الحجز",
+    icon: loc, // تأكد من الصورة
+    options: ["اختر الموقع", "حدد على الخريطة", "المحل"],
+  },
+  {
+    title: "تاريخ الاجار",
+    icon: date, // تأكد من الصورة
+    type: "date",
+  },
+  {
+    title: "تاريخ الارجاع",
+    icon: date,
+    type: "date",
+  },
 ];
