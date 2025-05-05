@@ -5,22 +5,11 @@ import { motion } from "framer-motion";
 import { fadeIn } from "../../utils/motion"
 import { links} from "../../data";
 
-interface NavLink {
-  href: string;
-  label: string;
-}
 
 const Navbar: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);
   const [activeLink, setActiveLink] = useState<string>("#home");
 
-  const navLinks: NavLink[] = [
-    { href: "#home", label: "الصفحة الرئيسية" },
-    { href: "#about", label: "لماذا تختارنا" },
-    { href: "#services", label: "خدماتنا" },
-    { href: "#pricing", label: "الأسعار التقريبية" },
-    { href: "#testimonials", label: "آراء العملاء" },
-  ];
 
   return (
     <motion.nav
@@ -98,7 +87,7 @@ const Navbar: React.FC = () => {
             variants={fadeIn("down", 0.3)}
             className="container mx-auto px-4 space-y-4"
           >
-            {navLinks.map((link, index) => (
+            {links.map((link, index) => (
               <motion.a
                 key={index}
                 variants={fadeIn("right", 0.1 * (index + 1))}

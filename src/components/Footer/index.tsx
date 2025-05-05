@@ -52,16 +52,19 @@ const Footer = () => {
 					</div>
 				</div>
 				<div className="flex flex-col gap-5">
-					<span className="uppercase text-white font-bold text-[26px]">contact info</span>
+					<span className="uppercase text-white font-bold text-[26px]">معلومات التواصل</span>
 					<div className="flex flex-col gap-5">
-						<div className="flex items-center gap-2">
+						<div className="flex items-center gap-2 ">
+							<a href="https://maps.app.goo.gl/NLEYgSp4hKk2S7Ar8" className="flex gap-2">
 							<img
 								src={loc}
 								alt="location"
 							/>
-							<span className="text-white">State Road 54 Trinity, Florida</span>
+							<span className="text-white">بريدة - ضراس</span>
+							</a>
 						</div>
 						<div className="flex items-center gap-2">
+							<a></a>
 							<img
 								src={call}
 								alt="phone"
@@ -79,20 +82,14 @@ const Footer = () => {
 				</div>
 				<div className="flex flex-col gap-[26px]">
 					<span className="text-white uppercase font-bold text-[26px]">
-						Subscribe our Newsletter
+					الشهادات والرخص
 					</span>
-					<p className="text-white max-w-[420px]">
-						Vel non nibh vestibulum massa ullam corper bib endum ultrices venenatis, id id sed
-						mass.
-					</p>
-					<div className="flex items-center justify-between border-b border-white pb-3">
-						<input
-							type="text"
-							className="outline-none border-none bg-transparent text-white placeholder:text-white"
-							placeholder="Your email address"
-						/>
-						<span className="text-white cursor-pointer uppercase font-bold">Subscribe</span>
-					</div>
+					<a className="text-white max-w-[420px]">
+					المركز الوطني لإدارة النفايات
+					</a>
+
+						<a className="text-white cursor-pointer uppercase font-bold min-w-fit">المركز الوطني لرقابة على الالتزام البيئي</a>
+
 				</div>
 			</div>
 			<div className="w-full flex lg:flex-row flex-col items-center justify-between lg:py-0 py-5 lg:h-[80px] border-t border-[#5F5F5F] lg:px-[310px] px-5">
