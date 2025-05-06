@@ -2,7 +2,7 @@ import { useRental } from "../../context/RentalContext";
 import MapSelector from "../MapSelector"; // تأكد من مكان حفظ هذا الملف
 import bg from "../../assets/images/bg.png";
 import { selects } from "../../data";
-import {useEffect } from "react";
+import { useEffect } from "react";
 
 const Header = () => {
   const today = new Date().toISOString().split("T")[0];
@@ -47,9 +47,6 @@ const Header = () => {
       alert("الخرائط غير مدعومة في متصفحك");
     }
   };
-  
-  
-  
 
   useEffect(() => {
     if (location === "حدد على الخريطة") {
