@@ -54,7 +54,7 @@ const Header = () => {
 
   return (
     <section id="home">
-      <div className="w-full lg:h-screen flex flex-col mt-[40px]">
+      <div className="w-full lg:h-screen flex flex-col mt-[81px]">
         {/* Hero */}
         <div
           className="w-full lg:h-[calc(100vh-75px)] bg-center bg-cover flex flex-col items-center justify-center py-10"
@@ -155,7 +155,7 @@ const Header = () => {
 
             {/* Map Display */}
             {(location === "حدد على الخريطة" || location === "المحل") && (
-              <div className="w-full h-[300px] rounded overflow-hidden mt-3">
+              <div className="w-full h-[300px] rounded  mt-3">
                 {location === "حدد على الخريطة" ? (
                   <MapSelector
                     onSelect={(lat, lng) => setCustomLocation({ lat, lng })}
