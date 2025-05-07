@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 //@ts-expect-error dsff
 import { fadeIn } from "../../utils/motion"
 import { links} from "../../data";
+import Image from "../../assets/images/logo-white.png"
 
 
 const Navbar: React.FC = () => {
@@ -17,7 +18,7 @@ const Navbar: React.FC = () => {
       initial="hidden"
       whileInView="show"
       viewport={{ once: true }}
-      className="fixed top-0 left-0 right-0 bg-white/90 backdrop-blur-sm z-50 border-b border-gray-100 shadow-sm"
+      className="fixed top-0 left-0 right-0 bg-white/90 backdrop-blur-sm z-full border-b border-gray-100 shadow-sm"
     >
       <div className="w-full flex justify-between items-center container mx-auto px-4 sm:px-6 lg:px-8 md:h-20 h-16">
         {/* Logo */}
@@ -25,11 +26,11 @@ const Navbar: React.FC = () => {
           variants={fadeIn("right", 0.3)}
           className="flex items-center gap-1 cursor-pointer"
         >
-          {/* <img
+          <img
             src={Image}
             alt="Logo"
-            style={{ width: "70px", height: "50px", objectFit: "cover" }}
-          /> */}
+            style={{ width: "50px", height: "50px", objectFit: "cover" }}
+          />
         </motion.div>
 
         {/* Mobile Menu Toggle */}
@@ -99,8 +100,8 @@ const Navbar: React.FC = () => {
                 className={`block text-sm font-medium py-2
                   ${
                     activeLink === link.href
-                      ? "bg-primary"
-                      : "text-gray-600 hover:text-gray-900"
+                      ? "bg-primary text-white p-2"
+                      : "text-gray-600 hover:text-gray-900 p-2"
                   }`}
               >
                 {link.label}

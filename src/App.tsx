@@ -5,6 +5,7 @@ import Navbar from "./components/Header/Navbar";
 import Services from "./components/Services";
 import Steps from "./components/Steps";
 import Types from "./components/Types";
+import Test from "./components/Footer/Test";
 
 const App = () => {
 	return (
@@ -16,6 +17,7 @@ const App = () => {
 			<Banner />
 
 			<Services />
+			<Test/>
 			<Footer />
 		</div>
 	);

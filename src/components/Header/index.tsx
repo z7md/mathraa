@@ -2,11 +2,12 @@ import { useRental } from "../../context/RentalContext";
 import MapSelector from "../MapSelector"; // تأكد من مكان حفظ هذا الملف
 import bg from "../../assets/images/bg.png";
 import { selects } from "../../data";
-import {useEffect } from "react";
+import { useEffect, useState } from "react";
+import "../../index.css";
 
 const Header = () => {
   const today = new Date().toISOString().split("T")[0];
-
+  const [showMapTooltip, setShowMapTooltip] = useState(false); // State for showing the tooltip
   const {
     rentalDate,
     returnDate,
@@ -47,9 +48,6 @@ const Header = () => {
       alert("الخرائط غير مدعومة في متصفحك");
     }
   };
-  
-  
-  
 
   useEffect(() => {
     if (location === "حدد على الخريطة") {
@@ -57,22 +55,25 @@ const Header = () => {
     }
   }, [location]); // كلما تغيّر موقع الحجز
 
+  // Function to handle double-click event on map
+
+
+  // Close the tooltip when "X" is clicked
+  const handleTooltipClose = () => {
+    setShowMapTooltip(false);
+  };
+
   return (
     <section id="home">
-      <div className="w-full lg:h-screen flex flex-col mt-[40px]">
-        {/* Hero */}
+      <div className="w-full lg:h-screen flex flex-col mt-[81px]">
         <div
           className="w-full lg:h-[calc(100vh-75px)] bg-center bg-cover flex flex-col items-center justify-center py-10"
           style={{ backgroundImage: `url(${bg})` }}
         >
           <h1 className="text-white font-bold text-[35px] lg:text-[63px] text-center">
-            ابحث عن سيارتك المثالية
+            أحجز حاويتك الآن
           </h1>
-          <p className="text-white text-lg text-center mt-2">
-            استأجر من أفضل تشكيلات السيارات والليموزين لدينا
-          </p>
 
-          {/* Filters */}
           <div className="w-full flex flex-col gap-5 lg:px-[310px] px-5 mt-10">
             <div className="w-full flex flex-col lg:flex-row gap-5">
               {selects.map((item) => (
@@ -83,11 +84,7 @@ const Header = () => {
                       <input
                         type="date"
                         min={item.title === "تاريخ الاجار" ? today : rentalDate}
-                        value={
-                          item.title === "تاريخ الاجار"
-                            ? rentalDate
-                            : returnDate
-                        }
+                        value={rentalDate}
                         onChange={(e) => {
                           const value = e.target.value;
                           if (item.title === "تاريخ الاجار") {
@@ -109,9 +106,10 @@ const Header = () => {
                           setLocation(selected);
 
                           if (selected === "المحل") {
-                            setCustomLocation({ lat:26.32599, lng: 43.97497 });
+                            setCustomLocation({ lat: 26.32599, lng: 43.97497 });
                           } else if (selected === "حدد على الخريطة") {
                             setCustomLocation(null); // سيختار المستخدم من الخريطة
+                            setShowMapTooltip(true); // Show tooltip when map is selected
                           } else {
                             setCustomLocation(null); // لا شيء محدد
                           }
@@ -142,13 +140,27 @@ const Header = () => {
             {/* الخريطة تظهر عند اختيار "حدد على الخريطة" أو "المحل" */}
             {(location === "حدد على الخريطة" || location === "المحل") && (
               <div className="w-full h-[300px] rounded overflow-hidden mt-3">
+                {showMapTooltip && (
+                  <div className="fixed top-0 left-0 w-full bg-yellow-500 text-center text-white p-2 flex" onClick={handleTooltipClose}>
+                    <span className="mr-6">
+                     إذا قمت بالنقر مرتين على الخريطة، سيتم تحديد الموقع الحالي.
+                     </span>
+                    <button
+                      onClick={handleTooltipClose}
+                      className="fixed top-0 right-0 text-white font-bold text-3xl mr-2"
+                    >
+                      ×
+                    </button>
+                  </div>
+                )}
                 {location === "حدد على الخريطة" ? (
                   <MapSelector
+
                     onSelect={(lat, lng) => setCustomLocation({ lat, lng })}
                   />
                 ) : (
                   // خريطة بموقع ثابت عند اختيار "المحل"
-                  <MapSelector fixedLocation={{ lat:26.32599, lng: 43.97497 }} />
+                  <MapSelector fixedLocation={{ lat: 26.32599, lng: 43.97497 }} />
                 )}
               </div>
             )}

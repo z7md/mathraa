@@ -6,12 +6,12 @@ import c5 from "../assets/images/c5.png";
 import c6 from "../assets/images/c6.png";
 import t1 from "../assets/images/t1.png";
 import t2 from "../assets/images/t2.png";
-import t3 from "../assets/images/t3.png";
-import t4 from "../assets/images/t4.png";
-import t5 from "../assets/images/t5.png";
-import t6 from "../assets/images/t6.png";
-import t7 from "../assets/images/t7.png";
-import t8 from "../assets/images/t8.png";
+// import t3 from "../assets/images/t3.png";
+// import t4 from "../assets/images/t4.png";
+// import t5 from "../assets/images/t5.png";
+// import t6 from "../assets/images/t6.png";
+// import t7 from "../assets/images/t7.png";
+// import t8 from "../assets/images/t8.png";
 import p1 from "../assets/images/p1.png";
 import p2 from "../assets/images/p2.png";
 import p3 from "../assets/images/p3.png";
@@ -22,32 +22,47 @@ import s4 from "../assets/images/cha.svg";
 // import vt from "../assets/images/vt.svg";
 import loc from "../assets/images/loc.svg";
 import date from "../assets/images/date.svg";
-
 export const steps = [
   {
     id: "01",
-    title: "اختر مركبة",
-    description: "اختر السيارة المناسبة لاحتياجاتك بكل سهولة.",
+    title: "شركة متخصصة",
+    description: "نقل وإدارة المخلفات بأنواعها بأسلوب احترافي.",
   },
   {
     id: "02",
-    title: "حدد الموقع والتاريخ",
-    description: "اختر موقع الاستلام والتواريخ التي تناسبك.",
+    title: "فريق مدرب",
+    description: "كوادر مؤهلة بخبرة ميدانية ومعايير مهنية عالية.",
   },
   {
     id: "03",
-    title: "احجز سيارتك",
-    description: "أكمل إجراءات الحجز بسرعة وبساطة.",
+    title: "التزام بيئي",
+    description: "نطبق أعلى معايير النظافة والسلامة البيئية.",
   },
   {
     id: "04",
-    title: "أنهِ العملية",
-    description: "استلم سيارتك وانطلق بكل راحة.",
+    title: "حاويات مرنة",
+    description: "نوفر حاويات 12 و20 ياردة حسب احتياجك.",
   },
-
-
-
-
+  {
+    id: "05",
+    title: "عقود نظافة",
+    description: "عقود مرنة تناسب الأفراد والمشاريع.",
+  },
+  {
+    id: "06",
+    title: "أسعار منافسة",
+    description: "نوفر الخدمة بأفضل جودة وأقل تكلفة.",
+  },
+  {
+    id: "07",
+    title: "نطاق الخدمة",
+    description: "نخدم منطقة القصيم – بريدة وما حولها.",
+  },
+  {
+    id: "08",
+    title: "رؤية واضحة",
+    description: "بيئة أنظف، خدمة أسرع، وكفاءة أعلى.",
+  },
 ];
 
 export const brands = [
@@ -60,14 +75,9 @@ export const brands = [
 ];
 
 export const types = [
-  { title: "جييب", price: "29 ريال", image: t1, type: "نوع 1" },
-  { title: "مرسيدس", price: "29 ريال", image: t2, type: "نوع 1" },
-  { title: "بي ام دبليو", price: "29 ريال", image: t3, type: "نوع 2" },
-  { title: "هونداي", price: "29 ريال", image: t4, type: "نوع 2" },
-  { title: "مرسيدس", price: "29 ريال", image: t5, type: "نوع 2" },
-  { title: "فورد", price: "29 ريال", image: t6, type: "نوع 3" },
-  { title: "فورد", price: "29 ريال", image: t7, type: "نوع 3" },
-  { title: "بي ام دبليو", price: "29 ريال", image: t8, type: "نوع 3" },
+  { title: "12 ياردة", price: "200 ريال", image: t1, type: "نوع 1" },
+  { title: "20 ياردة", price: "250 ريال", image: t2, type: "نوع 1" },
+
 ];
 
 export const plans = [
@@ -157,16 +167,13 @@ export const services = [
 
 export const links = [
   { label: "الصفحة الرئيسية", href: "#home" },
-  { label: "الحجز", href: "#booking" },
+  { label: "أطلب حاوية", href: "#booking" },
   { label: "من نحن", href: "#about" },
+  { label: "أراء العملاء", href: "#testimonials" },
   { label: "تواصل معنا", href: "#contact" },
 ];
 export const selects = [
-  {
-    title: "موقع الحجز",
-    icon: loc, // تأكد من الصورة
-    options: ["اختر الموقع", "حدد على الخريطة", "المحل"],
-  },
+
   {
     title: "تاريخ الاجار",
     icon: date, // تأكد من الصورة
@@ -176,5 +183,10 @@ export const selects = [
     title: "تاريخ الارجاع",
     icon: date,
     type: "date",
+  },
+  {
+    title: "موقع الحجز",
+    icon: loc, // تأكد من الصورة
+    options: ["اختر الموقع", "حدد على الخريطة", "المحل"],
   },
 ];
