@@ -1,5 +1,6 @@
 import Banner from "./components/Banner";
 import Footer from "./components/Footer";
+import Test from "./components/Footer/Test";
 import Header from "./components/Header";
 import Navbar from "./components/Header/Navbar";
 import Services from "./components/Services";
@@ -15,7 +16,6 @@ const App = () => {
 			<Steps />
 			<Types />
 			<Banner />
-
 			<Services />
 			<Test/>
 			<Footer />

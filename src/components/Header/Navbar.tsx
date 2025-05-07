@@ -18,7 +18,11 @@ const Navbar: React.FC = () => {
       initial="hidden"
       whileInView="show"
       viewport={{ once: true }}
+<<<<<<< HEAD
       className="fixed top-0 left-0 right-0 bg-white/90 backdrop-blur-sm z-full border-b border-gray-100 shadow-sm"
+=======
+      className="fixed top-0 left-0 right-0 bg-white/90 backdrop-blur-sm border-b z-[100] border-gray-100 shadow-sm"
+>>>>>>> 9f1c308c02fc5bcb5feca4704598922c8d20cc13
     >
       <div className="w-full flex justify-between items-center container mx-auto px-4 sm:px-6 lg:px-8 md:h-20 h-16">
         {/* Logo */}
