@@ -76,8 +76,9 @@ export const brands = [
 ];
 
 export const types = [
-  { title: "12 ياردة", price: "200 ريال", image: t2, type: "نوع 1" },
   { title: "20 ياردة", price: "250 ريال", image: t1, type: "نوع 1" },
+  { title: "12 ياردة", price: "200 ريال", image: t2, type: "نوع 1" },
+
 
 ];
 
@@ -139,11 +140,11 @@ export const posts = [
 ];
 
 export const services = [
-  {
-    title: "سيارات متنوعة",
-    description: "نوفر لك مجموعة واسعة من السيارات لتناسب جميع احتياجاتك.",
-    icon: s1,
-  },
+  // {
+  //   title: "سيارات متنوعة",
+  //   description: "نوفر لك مجموعة واسعة من السيارات لتناسب جميع احتياجاتك.",
+  //   icon: s1,
+  // },
   {
     title: "حجز سهل",
     description: "إجراءات الحجز لدينا بسيطة وسريعة دون أي تعقيد.",
@@ -167,11 +168,11 @@ export const services = [
 ];
 
 export const links = [
-  { label: "الصفحة الرئيسية", href: "#home" },
-  { label: "أطلب حاوية", href: "#booking" },
-  { label: "من نحن", href: "#about" },
-  { label: "أراء العملاء", href: "#testimonials" },
-  { label: "تواصل معنا", href: "#contact" },
+  { label: "الصفحة الرئيسية", href: "/car_rent#home/" },
+  { label: "أطلب حاوية", href: "/car_rent#booking" },
+  { label: "من نحن", href: "/car_rent#about" },
+  { label: "أراء العملاء", href: "/car_rent#testimonials" },
+  { label: "تواصل معنا", href: "/car_rent#contact" },
 ];
 export const selects = [
 

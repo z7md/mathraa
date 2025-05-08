@@ -6,16 +6,17 @@ import { fadeIn, textVariant } from "../../utils/motion";
 
 const Steps: FC = () => {
   return (
-    <section id="about" className="w-full mt-[40px] px-5 lg:px-[310px]">
+    <section id="about" className="">
+      <div className="w-full lg:px-[310px] px-5 flex flex-col gap-8 items-center justify-center mt-[140px]">
       {/* Section Title */}
-      <motion.h2
-        variants={textVariant(0.2)}
-        initial="hidden"
-        whileInView="show"
-        className="text-center text-3xl font-bold mb-10 text-title lg:text-[48px] text-[35px]"
-      >
+      <motion.span
+          variants={textVariant(0.2)}
+          initial="hidden"
+          whileInView="show"
+          className="text-title lg:text-[48px] text-[35px] font-bold uppercase"
+        >
         من نحن
-      </motion.h2>
+        </motion.span>
 
       {/* Steps */}
       <div className="flex items-center justify-between lg:flex-row flex-col gap-8">
@@ -39,6 +40,7 @@ const Steps: FC = () => {
             </span>
           </motion.div>
         ))}
+      </div>
       </div>
     </section>
   );

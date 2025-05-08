@@ -3,9 +3,11 @@ import { types } from "../../data";
 import { useRental } from "../../context/RentalContext";
 import { motion } from "framer-motion";
 import { fadeIn, textVariant } from "../../utils/motion";
+import {useNavigate} from "react-router-dom";
 
 const Types: FC = () => {
   const { rentalDate, returnDate, location, customLocation } = useRental();
+  const navigate = useNavigate();
 
   return (
     <section id="booking">
@@ -42,38 +44,19 @@ const Types: FC = () => {
                   {item.price}
                 </div>
               </div>
-              <span className="font-bold text-title text-[22px]">
+              <span className="font-bold text-title text-[22px] p-2">
                 {item.title}
               </span>
-              <div className="text-secondary">
+              {/* <div className="text-secondary">
                 <span className="font-semibold text-lg">
                   {item.price}
                 </span>
-              </div>
+              </div> */}
               {/* Book Now Button */}
               <span
-                className="mt-1 font-bold text-white bg-primary py-2 px-6 rounded-lg cursor-pointer transition-all duration-300 hover:scale-105 ease-in-out hover:bg-primary-dark hover:shadow-lg"
+                className="mt-1 p-2 font-bold text-white bg-primary py-2 px-6 rounded-lg cursor-pointer transition-all duration-300 hover:scale-105 ease-in-out hover:bg-primary-dark hover:shadow-lg"
                 onClick={() => {
-                  const phone = "966508559192";
-                  const locationType = location;
-                  const mapLink = customLocation
-                    ? `https://www.google.com/maps?q=${customLocation.lat},${customLocation.lng}`
-                    : "لا يوجد موقع محدد";
-
-                    const message = `**طلب حجز حاوية**
-
-                    **رابط الموقع:** ${mapLink}
-                    
-                    **تاريخ الإيجار:** ${rentalDate}
-                    
-                    **نوع الحاوية:** ${item.title}
-                    
-                    تم إرسال هذا الطلب من الموقع.`;
-
-                  const url = `https://wa.me/${phone}?text=${encodeURIComponent(
-                    message
-                  )}`;
-                  window.open(url, "_blank");
+                  navigate("/car_rent/item"+(index+1))
                 }}
               >
                 أطلب الآن
