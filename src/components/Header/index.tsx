@@ -9,10 +9,8 @@ const Header: React.FC = () => {
   const [showMapTooltip, setShowMapTooltip] = useState(false);
   const {
     rentalDate,
-    // returnDate,
     location,
     setRentalDate,
-    // setReturnDate,
     setLocation,
     setCustomLocation,
   } = useRental();
@@ -41,7 +39,10 @@ const Header: React.FC = () => {
 
   useEffect(() => {
     if (location === "حدد على الخريطة") {
+      setShowMapTooltip(true);  // Show tooltip when the user selects "حدد على الخريطة"
       getCurrentLocation();
+    } else {
+      setShowMapTooltip(false);  // Hide tooltip when the location is not "حدد على الخريطة"
     }
   }, [location]);
 
@@ -76,7 +77,6 @@ const Header: React.FC = () => {
                   className="w-full h-[60px] rounded px-3 outline-none bg-white border border-primary text-primary "
                 />
               </div>
-
             </div>
 
             {/* Location */}
@@ -103,11 +103,6 @@ const Header: React.FC = () => {
                   <option value="المحل">المحل</option>
                   <option value="حدد على الخريطة">حدد على الخريطة</option>
                 </select>
-                {/* <img
-                  src={loc}
-                  alt="Location Icon"
-                  className="absolute right-5 top-1/2 -translate-y-1/2 pointer-events-none w-5 h-5"
-                /> */}
               </div>
             </div>
 
@@ -115,7 +110,7 @@ const Header: React.FC = () => {
             {(location === "حدد على الخريطة") && (
               <div className="w-full h-[300px] rounded overflow-hidden mt-3">
                 {showMapTooltip && (
-                  <div className="fixed top-0 left-0 w-full bg-yellow-500 text-center text-white p-2 flex" onClick={handleTooltipClose}>
+                  <div className="fixed top-0 left-0 w-full bg-yellow-500 text-center text-white p-2 flex z-[100]" onClick={handleTooltipClose}>
                     <span className="mr-6">
                      إذا قمت بالنقر مرتين على الخريطة، سيتم تحديد الموقع الحالي.
                      </span>

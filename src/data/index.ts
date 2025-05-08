@@ -4,14 +4,15 @@ import c3 from "../assets/images/c3.png";
 import c4 from "../assets/images/c4.png";
 import c5 from "../assets/images/c5.png";
 import c6 from "../assets/images/c6.png";
-import t1 from "../assets/images/t1.png";
-import t2 from "../assets/images/t2.png";
+import t1 from "../assets/images/hawe1.png";
+import t2 from "../assets/images/hawe2.png";
 // import t3 from "../assets/images/t3.png";
 // import t4 from "../assets/images/t4.png";
 // import t5 from "../assets/images/t5.png";
 // import t6 from "../assets/images/t6.png";
 // import t7 from "../assets/images/t7.png";
 // import t8 from "../assets/images/t8.png";
+
 import p1 from "../assets/images/p1.png";
 import p2 from "../assets/images/p2.png";
 import p3 from "../assets/images/p3.png";
@@ -75,8 +76,8 @@ export const brands = [
 ];
 
 export const types = [
-  { title: "12 ياردة", price: "200 ريال", image: t1, type: "نوع 1" },
-  { title: "20 ياردة", price: "250 ريال", image: t2, type: "نوع 1" },
+  { title: "12 ياردة", price: "200 ريال", image: t2, type: "نوع 1" },
+  { title: "20 ياردة", price: "250 ريال", image: t1, type: "نوع 1" },
 
 ];
 

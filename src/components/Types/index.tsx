@@ -21,7 +21,7 @@ const Types: FC = () => {
         </motion.span>
 
         {/* Container Types with Animation */}
-        <div className="w-full flex items-center flex-wrap justify-center gap-5">
+        <div className="w-full flex flex-wrap justify-center gap-5">
           {types.map((item, index: number) => (
             <motion.div
               key={index}
@@ -29,24 +29,30 @@ const Types: FC = () => {
               initial="hidden"
               whileInView="show"
               viewport={{ once: true }}
-              className="flex flex-col items-center justify-center gap-2 lg:w-auto w-full"
+              className="flex flex-col items-center justify-center gap-2 w-full md:w-[48%] lg:w-auto"
             >
-              <img
-                src={item.image}
-                alt={item.title}
-                className="lg:h-[210px] w-full"
-              />
+              <div className="relative">
+                <img
+                  src={item.image}
+                  alt={item.title}
+                  className="lg:h-[210px] w-full rounded-lg shadow-lg transition-transform duration-300 ease-in-out hover:scale-105 hover:shadow-xl"
+                />
+                {/* Price Overlay */}
+                <div className="absolute bottom-4 left-4 bg-primary text-white text-lg font-semibold px-3 py-2 rounded-lg shadow-md">
+                  {item.price}
+                </div>
+              </div>
               <span className="font-bold text-title text-[22px]">
                 {item.title}
               </span>
               <div className="text-secondary">
-                تبدأ من{" "}
                 <span className="font-semibold text-lg">
-                  {item.price}/يوم
+                  {item.price}
                 </span>
               </div>
+              {/* Book Now Button */}
               <span
-                className="mt-1 font-bold border-b border-placeholder pb-1 text-sm cursor-pointer"
+                className="mt-1 font-bold text-white bg-primary py-2 px-6 rounded-lg cursor-pointer transition-all duration-300 hover:scale-105 ease-in-out hover:bg-primary-dark hover:shadow-lg"
                 onClick={() => {
                   const phone = "966508559192";
                   const locationType = location;
@@ -54,17 +60,15 @@ const Types: FC = () => {
                     ? `https://www.google.com/maps?q=${customLocation.lat},${customLocation.lng}`
                     : "لا يوجد موقع محدد";
 
-                  const message = `طلب حجز سيارة
+                    const message = `**طلب حجز حاوية**
 
-نوع الموقع: ${locationType}
-رابط الموقع: ${mapLink}
-
-تاريخ الإيجار: ${rentalDate}
-تاريخ الإرجاع: ${returnDate || "غير محدد"}
-
-اسم السيارة: ${item.title}
-
-تم إرسال هذا الطلب من الموقع.`;
+                    **رابط الموقع:** ${mapLink}
+                    
+                    **تاريخ الإيجار:** ${rentalDate}
+                    
+                    **نوع الحاوية:** ${item.title}
+                    
+                    تم إرسال هذا الطلب من الموقع.`;
 
                   const url = `https://wa.me/${phone}?text=${encodeURIComponent(
                     message
@@ -72,7 +76,7 @@ const Types: FC = () => {
                   window.open(url, "_blank");
                 }}
               >
-                أحجز الآن
+                أطلب الآن
               </span>
             </motion.div>
           ))}
