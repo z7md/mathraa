@@ -1,16 +1,8 @@
 import { useRental } from "../../context/RentalContext";
 import MapSelector from "../MapSelector"; // تأكد من مكان حفظ هذا الملف
 import bg from "../../assets/images/bg.png";
-<<<<<<< HEAD
-import { selects } from "../../data";
 import { useEffect, useState } from "react";
 import "../../index.css";
-=======
-import { useEffect } from "react";
-import loc from "../../assets/images/loc.svg";
-import date from "../../assets/images/date.svg";
-import "../../index.css"
->>>>>>> 9f1c308c02fc5bcb5feca4704598922c8d20cc13
 
 const Header = () => {
   const today = new Date().toISOString().split("T")[0];
@@ -69,10 +61,7 @@ const Header = () => {
   return (
     <section id="home">
       <div className="w-full lg:h-screen flex flex-col mt-[81px]">
-<<<<<<< HEAD
-=======
         {/* Hero */}
->>>>>>> 9f1c308c02fc5bcb5feca4704598922c8d20cc13
         <div
           className="w-full lg:h-[calc(100vh-75px)] bg-center bg-cover flex flex-col items-center justify-center py-10"
           style={{ backgroundImage: `url(${bg})` }}
@@ -84,65 +73,6 @@ const Header = () => {
           <div className="w-full flex flex-col gap-5 lg:px-[310px] px-5 mt-10">
             {/* Rental and Return Dates */}
             <div className="w-full flex flex-col lg:flex-row gap-5">
-<<<<<<< HEAD
-              {selects.map((item) => (
-                <div key={item.title} className="flex flex-col w-full gap-2">
-                  <span className="text-white font-medium">{item.title}</span>
-                  <div className="relative w-full">
-                    {item.type === "date" ? (
-                      <input
-                        type="date"
-                        min={item.title === "تاريخ الاجار" ? today : rentalDate}
-                        value={rentalDate}
-                        onChange={(e) => {
-                          const value = e.target.value;
-                          if (item.title === "تاريخ الاجار") {
-                            setRentalDate(value);
-                            if (returnDate && value > returnDate) {
-                              setReturnDate("");
-                            }
-                          } else {
-                            setReturnDate(value);
-                          }
-                        }}
-                        className="w-full h-[60px] rounded px-3 pr-12 outline-none bg-white text-black cursor-pointer"
-                      />
-                    ) : (
-                      <select
-                        value={location}
-                        onChange={(e) => {
-                          const selected = e.target.value;
-                          setLocation(selected);
-
-                          if (selected === "المحل") {
-                            setCustomLocation({ lat: 26.32599, lng: 43.97497 });
-                          } else if (selected === "حدد على الخريطة") {
-                            setCustomLocation(null); // سيختار المستخدم من الخريطة
-                            setShowMapTooltip(true); // Show tooltip when map is selected
-                          } else {
-                            setCustomLocation(null); // لا شيء محدد
-                          }
-                        }}
-                        className="w-full h-[60px] rounded px-3 pr-12 outline-none bg-white text-black cursor-pointer appearance-none"
-                      >
-                        {item.options?.map((option, index) => (
-                          <option
-                            key={index}
-                            value={option}
-                            disabled={index === 0} // اجعل "اختر المكان" غير قابل للتحديد
-                          >
-                            {option}
-                          </option>
-                        ))}
-                      </select>
-                    )}
-                    <img
-                      src={item.icon}
-                      alt={item.title}
-                      className="absolute right-5 top-1/2 -translate-y-1/2 pointer-events-none w-5 h-5"
-                    />
-                  </div>
-=======
               {/* Rental Date */}
               <div className="flex flex-col w-full gap-2">
                 <span className="text-white font-medium">تاريخ الاجار</span>
@@ -160,12 +90,11 @@ const Header = () => {
                     }}
                     className="w-[340px] pr-12 md:w-full h-[60px] rounded px-3 outline-none bg-white text-black cursor-pointer text-right"
                   />
-                  <img
+                  {/* <img
                     src={date}
                     alt="Location Icon"
                     className="absolute right-5 top-1/2 -translate-y-1/2 pointer-events-none w-5 h-5"
-                  />
->>>>>>> 9f1c308c02fc5bcb5feca4704598922c8d20cc13
+                  /> */}
                 </div>
               </div>
 
@@ -183,11 +112,11 @@ const Header = () => {
                     }}
                     className="w-[340px] pr-12 md:w-full h-[60px] rounded px-3  outline-none bg-white text-black cursor-pointer text-right"
                   />
-                  <img
+                  {/* <img
                     src={date}
                     alt="Location Icon"
                     className="absolute right-5 top-1/2 -translate-y-1/2 pointer-events-none w-5 h-5"
-                  />
+                  /> */}
                 </div>
 
               </div>
@@ -218,17 +147,16 @@ const Header = () => {
                   <option value="المحل">المحل</option>
                   <option value="حدد على الخريطة">حدد على الخريطة</option>
                 </select>
-                <img
+                {/* <img
                   src={loc}
                   alt="Location Icon"
                   className="absolute right-5 top-1/2 -translate-y-1/2 pointer-events-none w-5 h-5"
-                />
+                /> */}
               </div>
             </div>
 
             {/* Map Display */}
-            {(location === "حدد على الخريطة" || location === "المحل") && (
-<<<<<<< HEAD
+            {(location === "حدد على الخريطة") && (
               <div className="w-full h-[300px] rounded overflow-hidden mt-3">
                 {showMapTooltip && (
                   <div className="fixed top-0 left-0 w-full bg-yellow-500 text-center text-white p-2 flex" onClick={handleTooltipClose}>
@@ -243,20 +171,13 @@ const Header = () => {
                     </button>
                   </div>
                 )}
-=======
-              <div className="w-full h-[300px] rounded  mt-3">
->>>>>>> 9f1c308c02fc5bcb5feca4704598922c8d20cc13
                 {location === "حدد على الخريطة" ? (
                   <MapSelector
 
                     onSelect={(lat, lng) => setCustomLocation({ lat, lng })}
                   />
                 ) : (
-<<<<<<< HEAD
                   // خريطة بموقع ثابت عند اختيار "المحل"
-=======
-                  // Static map for "المحل"
->>>>>>> 9f1c308c02fc5bcb5feca4704598922c8d20cc13
                   <MapSelector fixedLocation={{ lat: 26.32599, lng: 43.97497 }} />
                 )}
               </div>
