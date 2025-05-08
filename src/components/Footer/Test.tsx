@@ -64,7 +64,7 @@ const TestimonialsSection: FC = () => {
           variants={textVariant(0.2)}
           className="text-3xl md:text-4xl font-bold mb-4"
         >
-          اراء العملاء
+        أراء العملاء
         </motion.h2>
       </motion.div>
 
@@ -102,7 +102,7 @@ const TestimonialsSection: FC = () => {
           className="testimonials-swiper"
         >
           {testimonials.map((testimonial) => (
-            <SwiperSlide key={testimonial.id} className="!w-full !h-auto">
+            <SwiperSlide key={testimonial.id} className="!h-auto">
               <motion.div
                 variants={fadeIn("up", 0.3)}
                 initial="hidden"

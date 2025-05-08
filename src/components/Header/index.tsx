@@ -1,23 +1,22 @@
 import { useRental } from "../../context/RentalContext";
-import MapSelector from "../MapSelector"; // تأكد من مكان حفظ هذا الملف
-import bg from "../../assets/images/bg.png";
+import MapSelector from "../MapSelector";
 import { useEffect, useState } from "react";
+import { motion } from "framer-motion";
 import "../../index.css";
 
-const Header = () => {
+const Header: React.FC = () => {
   const today = new Date().toISOString().split("T")[0];
-  const [showMapTooltip, setShowMapTooltip] = useState(false); // State for showing the tooltip
+  const [showMapTooltip, setShowMapTooltip] = useState(false);
   const {
     rentalDate,
-    returnDate,
+    // returnDate,
     location,
     setRentalDate,
-    setReturnDate,
+    // setReturnDate,
     setLocation,
     setCustomLocation,
   } = useRental();
 
-  // دالة للحصول على الموقع الحالي
   const getCurrentLocation = () => {
     if (navigator.geolocation) {
       navigator.permissions.query({ name: "geolocation" }).then((permissionStatus) => {
@@ -33,10 +32,6 @@ const Header = () => {
               alert("لم نتمكن من تحديد موقعك. " + error.message);
             }
           );
-        } else if (permissionStatus.state === "denied") {
-          alert("لم يتم السماح بالوصول إلى موقعك. الرجاء السماح بإذن الموقع.");
-        } else {
-          alert("لم يتم تحديد حالة إذن الموقع.");
         }
       });
     } else {
@@ -46,79 +41,40 @@ const Header = () => {
 
   useEffect(() => {
     if (location === "حدد على الخريطة") {
-      getCurrentLocation(); // جلب الموقع عند اختيار "حدد على الخريطة"
+      getCurrentLocation();
     }
   }, [location]);
 
-  // Function to handle double-click event on map
-
-
-  // Close the tooltip when "X" is clicked
   const handleTooltipClose = () => {
     setShowMapTooltip(false);
   };
 
   return (
-    <section id="home">
-      <div className="w-full lg:h-screen flex flex-col mt-[81px]">
-        {/* Hero */}
-        <div
-          className="w-full lg:h-[calc(100vh-75px)] bg-center bg-cover flex flex-col items-center justify-center py-10"
-          style={{ backgroundImage: `url(${bg})` }}
+    <section id="home" className="">
+      <div className="w-full lg:h-screen flex flex-col lg:flex-row mt-[81px] lg:mt-0 justify-center items-center">
+        <motion.div
+          className="w-[60%] flex flex-col gap-5 px-5 py-10"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 1 }}
         >
-          <h1 className="text-white font-bold text-[35px] lg:text-[63px] text-center">
+          <h1 className="text-[35px] lg:text-[63px] font-bold text-center text-primary ">
             أحجز حاويتك الآن
           </h1>
 
-          <div className="w-full flex flex-col gap-5 lg:px-[310px] px-5 mt-10">
-            {/* Rental and Return Dates */}
+          {/* Input Fields Section */}
+          <div className="flex flex-col gap-5">
             <div className="w-full flex flex-col lg:flex-row gap-5">
               {/* Rental Date */}
               <div className="flex flex-col w-full gap-2">
-                <span className="text-white font-medium">تاريخ الاجار</span>
-                <div className="relative w-full">
-                  <input
-                    type="date"
-                    min={today}
-                    value={rentalDate}
-                    onChange={(e) => {
-                      const value = e.target.value;
-                      setRentalDate(value);
-                      if (returnDate && value > returnDate) {
-                        setReturnDate(""); // Clear return date if rental date is later
-                      }
-                    }}
-                    className="w-[340px] pr-12 md:w-full h-[60px] rounded px-3 outline-none bg-white text-black cursor-pointer text-right"
-                  />
-                  {/* <img
-                    src={date}
-                    alt="Location Icon"
-                    className="absolute right-5 top-1/2 -translate-y-1/2 pointer-events-none w-5 h-5"
-                  /> */}
-                </div>
-              </div>
-
-              {/* Return Date */}
-              <div className="flex flex-col w-full gap-2">
-                <span className="text-white font-medium">تاريخ العودة</span>
-                <div className="relative w-full">
-                  <input
-                    type="date"
-                    min={rentalDate}
-                    value={returnDate}
-                    onChange={(e) => {
-                      const value = e.target.value;
-                      setReturnDate(value);
-                    }}
-                    className="w-[340px] pr-12 md:w-full h-[60px] rounded px-3  outline-none bg-white text-black cursor-pointer text-right"
-                  />
-                  {/* <img
-                    src={date}
-                    alt="Location Icon"
-                    className="absolute right-5 top-1/2 -translate-y-1/2 pointer-events-none w-5 h-5"
-                  /> */}
-                </div>
-
+                <span className="text-primary font-medium ">تاريخ الاجار</span>
+                <input
+                  type="date"
+                  min={today}
+                  value={rentalDate}
+                  onChange={(e) => setRentalDate(e.target.value)}
+                  className="w-full h-[60px] rounded px-3 outline-none bg-white border border-primary text-primary "
+                />
               </div>
 
             </div>
@@ -172,18 +128,12 @@ const Header = () => {
                   </div>
                 )}
                 {location === "حدد على الخريطة" ? (
-                  <MapSelector
-
-                    onSelect={(lat, lng) => setCustomLocation({ lat, lng })}
-                  />
+                  <MapSelector onSelect={(lat, lng) => setCustomLocation({ lat, lng })} />
                 ) : (
-                  // خريطة بموقع ثابت عند اختيار "المحل"
                   <MapSelector fixedLocation={{ lat: 26.32599, lng: 43.97497 }} />
                 )}
               </div>
             )}
-
-            {/* Button */}
             <a
               className="bg-primary w-full h-[60px] text-white font-bold uppercase mt-5 text-center flex justify-center items-center"
               href="#booking"
@@ -191,7 +141,7 @@ const Header = () => {
               ابحث الآن
             </a>
           </div>
-        </div>
+        </motion.div>
       </div>
     </section>
   );
