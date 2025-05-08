@@ -34,7 +34,7 @@ const Steps: FC = () => {
             <span className="text-secondary font-bold text-lg mt-2">
               {item.title}
             </span>
-            <span className="text-description mt-1 text-gray-600 text-sm">
+            <span className=" mt-1 text-gray-600 text-sm">
               {item.description}
             </span>
           </motion.div>
