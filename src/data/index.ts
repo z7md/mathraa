@@ -16,7 +16,6 @@ import t2 from "../assets/images/hawe2.png";
 import p1 from "../assets/images/p1.png";
 import p2 from "../assets/images/p2.png";
 import p3 from "../assets/images/p3.png";
-import s1 from "../assets/images/car.svg";
 import s2 from "../assets/images/save.svg";
 import s3 from "../assets/images/money.svg";
 import s4 from "../assets/images/cha.svg";

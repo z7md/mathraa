@@ -1,12 +1,11 @@
 
 import Footer from "../components/Footer";
 import t2 from "../assets/images/hawe1.png";
-import t1 from "../assets/images/hawe2.png";
 import Navbar from "../components/Header/Navbar";
 import { useEffect, useState } from "react";
-import Hero from "../components/Header/Hero";
 import { useRental } from "../context/RentalContext";
 import { motion } from "framer-motion";
+//@ts-expect-error dsff
 import { fadeIn, textVariant } from "../utils/motion";
 import MapSelector from "../components/MapSelector";
 const Item1 = () => {
@@ -173,7 +172,6 @@ const Item1 = () => {
             className="mt-1 font-bold text-center text-white bg-primary py-2 px-6 rounded-lg cursor-pointer transition-all duration-300 hover:scale-105 ease-in-out hover:bg-primary-dark hover:shadow-lg"
             onClick={() => {
               const phone = "966508559192";
-              const locationType = location;
               const mapLink = customLocation
                 ? `https://www.google.com/maps?q=${customLocation.lat},${customLocation.lng}`
                 : "لا يوجد موقع محدد";

@@ -1,12 +1,11 @@
 import { FC } from "react";
 import { types } from "../../data";
-import { useRental } from "../../context/RentalContext";
 import { motion } from "framer-motion";
+//@ts-expect-error dsff
 import { fadeIn, textVariant } from "../../utils/motion";
 import {useNavigate} from "react-router-dom";
 
 const Types: FC = () => {
-  const { rentalDate, returnDate, location, customLocation } = useRental();
   const navigate = useNavigate();
 
   return (
