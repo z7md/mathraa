@@ -20,10 +20,10 @@ const Steps: FC = () => {
 
       {/* Steps */}
       <div className="flex items-center justify-between lg:flex-row flex-col gap-8">
-        {steps.map((item, index) => (
+        {steps.map((item,) => (
           <motion.div
             key={item.id}
-            variants={fadeIn("up", 0.2 * index)}
+            variants={fadeIn("up", 0.2 )}
             initial="hidden"
             whileInView="show"
             viewport={{ once: true }}

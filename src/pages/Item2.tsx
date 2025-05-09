@@ -1,11 +1,11 @@
 import Footer from "../components/Footer";
 import t2 from "../assets/images/hawe2.png";
-import Navbar from "../components/Header/Navbar";
+import Navbar2 from "../components/Header/Navbar2";
 import { useEffect, useState } from "react";
 import { useRental } from "../context/RentalContext";
 import { motion } from "framer-motion";
 //@ts-expect-error dsff
-import { fadeIn, textVariant } from "../utils/motion";
+import { fadeIn, } from "../utils/motion";
 import MapSelector from "../components/MapSelector";
 import "../index.css";
 const Item1 = () => {
@@ -68,7 +68,7 @@ const Item1 = () => {
 
   return (
     <div className="w-full flex flex-col almarai-extrabold justify-center items-center ">
-      <Navbar />
+      <Navbar2 />
       <motion.div
         className="w-[70%] flex flex-col gap-5 px-5 py-10"
         initial={{ opacity: 0 }}
@@ -96,7 +96,7 @@ const Item1 = () => {
                   className="lg:h-[210px] w-full rounded-lg shadow-lg transition-transform duration-300 ease-in-out hover:scale-105 hover:shadow-xl"
                 />
                 {/* Price Overlay */}
-                <div className="absolute bottom-4 left-4 bg-primary text-white text-lg font-semibold px-3 py-2 rounded-lg shadow-md">
+                <div className="absolute mt-[10px] left-4 bg-primary text-white text-lg font-semibold px-3 py-2 rounded-lg shadow-md">
                   {item.price}
                 </div>
               </div>
@@ -197,7 +197,7 @@ const Item1 = () => {
           <span
             className="mt-1 w-full h-[60px] px-3 font-bold text-center flex justify-center items-center text-white bg-primary  rounded-lg cursor-pointer transition-all duration-300 hover:scale-105 ease-in-out hover:bg-primary-dark hover:shadow-lg"
             onClick={() => {
-              const phone = "966508559192";
+              const phone = "966553116613";
               const mapLink = customLocation
                 ? `https://www.google.com/maps?q=${customLocation.lat},${customLocation.lng}`
                 : "لا يوجد موقع محدد";

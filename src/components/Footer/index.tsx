@@ -15,7 +15,7 @@ const Footer: FC = () => {
       whileInView="show"
       className="bg-gray-50 py-12"
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className=" mx-auto px-4 sm:px-6 lg:px-8">
         {/* Top Section */}
         <motion.div
           variants={fadeIn("up", 0.3)}
@@ -42,21 +42,21 @@ const Footer: FC = () => {
             <motion.div variants={fadeIn("up", 0.6)} className="flex gap-4">
               <motion.a
                 whileHover={{ scale: 1.1 }}
-                href="tel:+966563309090"
+                href="tel:+966553116613"
                 className="w-10 h-10 bg-gray-200 rounded-full flex items-center justify-center text-gray-600 hover:bg-red-600 hover:text-white transition-colors"
               >
                 <IoCallOutline className="w-5 h-5" />
               </motion.a>
               <motion.a
                 whileHover={{ scale: 1.1 }}
-                href="https://wa.me/966563309090"
+                href="https://wa.me/966553116613"
                 className="w-10 h-10 bg-gray-200 rounded-full flex items-center justify-center text-gray-600 hover:bg-green-500 hover:text-white transition-colors"
               >
                 <FaWhatsapp className="w-5 h-5" />
               </motion.a>
               <motion.a
                 whileHover={{ scale: 1.1 }}
-                href="https://www.google.com/maps/place/%D8%A7%D9%84%D8%A7%D9%85%D9%88%D8%A7%D8%AC+%D8%A7%D9%84%D9%86%D8%B8%D9%8A%D9%81%D8%A9"
+                href="https://maps.app.goo.gl/wAiS7hjF43SUVmVF8?g_st=ic"
                 className="w-10 h-10 bg-gray-200 rounded-full flex items-center justify-center text-gray-600 hover:bg-blue-500 hover:text-white transition-colors"
               >
                 <SiGooglemaps className="w-5 h-5" />

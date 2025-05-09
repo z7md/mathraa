@@ -22,7 +22,7 @@ const Types: FC = () => {
         </motion.span>
 
         {/* Container Types with Animation */}
-        <div className="w-full flex flex-wrap justify-center gap-5">
+        <div className="w-full flex-col flex flex-wrap justify-center gap-5">
           {types.map((item, index: number) => (
             <motion.div
               key={index}
@@ -32,18 +32,19 @@ const Types: FC = () => {
               viewport={{ once: true }}
               className="flex flex-col items-center justify-center gap-2 w-full md:w-[48%] lg:w-auto"
             >
-              <div className="relative">
+              <div className="relative ">
                 <img
                   src={item.image}
                   alt={item.title}
+
                   onClick={() => {
                     navigate("/mathraa/item"+(index+1))
                   }}
 
-                  className="lg:h-[210px] w-full rounded-lg shadow-lg transition-transform duration-300 ease-in-out hover:scale-105 hover:shadow-xl"
+                  className=" w-full rounded-lg shadow-lg transition-transform duration-300 ease-in-out hover:scale-105 hover:shadow-xl cursor-pointer"
                 />
                 {/* Price Overlay */}
-                <div className="absolute bottom-4 left-4 bg-primary text-white text-lg font-semibold px-3 py-2 rounded-lg shadow-md">
+                <div className="absolute left-4 mt-[10px] bg-primary text-white text-lg font-semibold px-2 py-1 rounded-lg shadow-md">
                   {item.price}
                 </div>
               </div>
@@ -57,7 +58,7 @@ const Types: FC = () => {
               </div> */}
               {/* Book Now Button */}
               <span
-                className="mt-1 p-2 font-bold text-white bg-primary py-2 px-6 rounded-lg cursor-pointer transition-all duration-300 hover:scale-105 ease-in-out hover:bg-primary-dark hover:shadow-lg"
+                className="mt-1 p-2 font-bold text-white bg-primary py-4 px-8 rounded-lg cursor-pointer transition-all duration-300 hover:scale-105 ease-in-out hover:bg-primary-dark hover:shadow-lg"
                 onClick={() => {
                   navigate("/mathraa/item"+(index+1))
                 }}

@@ -19,53 +19,56 @@ type Testimonial = {
 const testimonials: Testimonial[] = [
   {
     id: 1,
-    name: "Malek Ghlab",
-    text: "ما شاء الله. الشركة عنوان للتنظيف الدقيق في مدينة القصيم...",
+    name: "Malek",
+    text: "ملتزمين ب الوقت الي طلبت فيه الحاوية اشكرهم",
   },
   {
     id: 2,
-    name: "Om Lamees",
-    text: "دلله ربي وفقني وتعاملت معهم وكان اختيار موفق...",
+    name: "Abo sultan",
+    text: `تعامل ممتاز وسرعة في تأمين الحاويه
+الله يوفقهم ويرزقهم من واسع فضله`
   },
-  {
-    id: 3,
-    name: "فهد الضبيعي",
-    text: "بكل صراحه انا متعامل مع شركات تنظيف كثير...",
-  },
-  {
-    id: 4,
-    name: "naif almrwni",
-    text: `الصراحة من ابدع ما يكون\n1- اخلاق العمال جدا رائعة\n2- السرعة\n3- النظافة\nانصح بها وبقوة\nالله يوفقهم`,
-  },
-  {
-    id: 5,
-    name: "Ahmad Mohmad",
-    image: "https://randomuser.me/api/portraits/men/32.jpg",
-    text: `بيض الله وجهكم الصراحة شغلكم يوسع الصدر...`,
-  },
-  {
-    id: 6,
-    name: "Afrah Ebrahim",
-    image: "https://randomuser.me/api/portraits/women/28.jpg",
-    text: `بدون مبالغة أفضل شركة تنظيف بالقصيم...`,
-  },
+  // {
+  //   id: 3,
+  //   name: "فهد الضبيعي",
+  //   text: "بكل صراحه انا متعامل مع شركات تنظيف كثير...",
+  // },
+  // {
+  //   id: 4,
+  //   name: "naif almrwni",
+  //   text: `الصراحة من ابدع ما يكون\n1- اخلاق العمال جدا رائعة\n2- السرعة\n3- النظافة\nانصح بها وبقوة\nالله يوفقهم`,
+  // },
+  // {
+  //   id: 5,
+  //   name: "Ahmad Mohmad",
+  //   image: "https://randomuser.me/api/portraits/men/32.jpg",
+  //   text: `بيض الله وجهكم الصراحة شغلكم يوسع الصدر...`,
+  // },
+  // {
+  //   id: 6,
+  //   name: "Afrah Ebrahim",
+  //   image: "https://randomuser.me/api/portraits/women/28.jpg",
+  //   text: `بدون مبالغة أفضل شركة تنظيف بالقصيم...`,
+  // },
 ];
 
 const TestimonialsSection: FC = () => {
   return (
-    <section id="testimonials" className="py-16 px-4 w-full max-w-screen-xl mx-auto">
+    <section id="testimonials" className="py-16 px-4 w-full max-w-screen-xl mx-auto mt-[140px]">
       <motion.div
         variants={fadeIn("up", 0.3)}
         initial="hidden"
         whileInView="show"
-        className="text-center mb-12"
+        className="text-center"
       >
-        <motion.h2
+      <motion.span
           variants={textVariant(0.2)}
-          className="text-3xl md:text-4xl font-bold mb-4"
+          initial="hidden"
+          whileInView="show"
+          className="text-title lg:text-[48px] text-[35px] font-bold uppercase"
         >
         أراء العملاء
-        </motion.h2>
+        </motion.span>
       </motion.div>
 
       <motion.div

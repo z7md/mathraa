@@ -1,9 +1,4 @@
-import c1 from "../assets/images/c1.png";
-import c2 from "../assets/images/c2.png";
-import c3 from "../assets/images/c3.png";
-import c4 from "../assets/images/c4.png";
-import c5 from "../assets/images/c5.png";
-import c6 from "../assets/images/c6.png";
+
 import t1 from "../assets/images/hawe1.png";
 import t2 from "../assets/images/hawe2.png";
 // import t3 from "../assets/images/t3.png";
@@ -13,15 +8,11 @@ import t2 from "../assets/images/hawe2.png";
 // import t7 from "../assets/images/t7.png";
 // import t8 from "../assets/images/t8.png";
 
-import p1 from "../assets/images/p1.png";
-import p2 from "../assets/images/p2.png";
-import p3 from "../assets/images/p3.png";
+
 import s2 from "../assets/images/save.svg";
 import s3 from "../assets/images/money.svg";
 import s4 from "../assets/images/cha.svg";
 // import vt from "../assets/images/vt.svg";
-import loc from "../assets/images/loc.svg";
-import date from "../assets/images/date.svg";
 export const steps = [
   {
     id: "01",
@@ -65,20 +56,10 @@ export const steps = [
   },
 ];
 
-export const brands = [
-  { title: "HYUNDAI", image: c1 },
-  { title: "JEEP", image: c2 },
-  { title: "BMW", image: c3 },
-  { title: "JEEP", image: c4 },
-  { title: "FORD", image: c5 },
-  { title: "RANGE ROVER", image: c6 },
-];
 
 export const types = [
   { title: "20 ياردة", price: "250 ريال", image: t1, type: "نوع 1" },
   { title: "12 ياردة", price: "200 ريال", image: t2, type: "نوع 1" },
-
-
 ];
 
 export const plans = [
@@ -120,24 +101,6 @@ export const plans = [
   },
 ];
 
-export const posts = [
-  {
-    title: "Safest car rental services in 2024",
-    date: "Feb 22,2024 / Tips",
-    image: p1,
-  },
-  {
-    title: "Best car collection in the world",
-    date: "Feb 22,2024 / Tips",
-    image: p2,
-  },
-  {
-    title: "Which car is the best for travel",
-    date: "Feb 22,2024 / Tips",
-    image: p3,
-  },
-];
-
 export const services = [
   // {
   //   title: "سيارات متنوعة",
@@ -149,7 +112,7 @@ export const services = [
     description: "إجراءات الحجز لدينا بسيطة وسريعة دون أي تعقيد.",
     icon: s2,
   },
-  
+
   {
     title: "أفضل الاسعار",
     description: "نضمن لك أفضل الأسعار التنافسية في السوق.",
@@ -160,10 +123,6 @@ export const services = [
     description: "فريقنا متواجد دائمًا لمساعدتك على مدار الساعة.",
     icon: s4,
   },
-
-
-
-
 ];
 
 export const links = [
@@ -171,23 +130,24 @@ export const links = [
   { label: "أطلب حاوية", href: "#booking" },
   { label: "من نحن", href: "#about" },
   { label: "أراء العملاء", href: "#testimonials" },
-  { label: "تواصل معنا", href: "#contact" },
+];
+export const links1 = [
+  { label: "الصفحة الرئيسية", href: "/mathraa" },
+  { label: "أطلب حاوية", href: "/mathraa/booking" },
+  { label: "من نحن", href: "/mathraa/about" },
+  { label: "أراء العملاء", href: "/mathraa/testimonials" },
 ];
 export const selects = [
-
   {
-    title: "تاريخ الاجار",
-    icon: date, // تأكد من الصورة
+    title: "تاريخ الاجار",// تأكد من الصورة
     type: "date",
   },
   {
     title: "تاريخ الارجاع",
-    icon: date,
     type: "date",
   },
   {
     title: "موقع الحجز",
-    icon: loc, // تأكد من الصورة
     options: ["اختر الموقع", "حدد على الخريطة"],
   },
 ];

@@ -1,11 +1,11 @@
 import Footer from "../components/Footer";
 import t2 from "../assets/images/hawe1.png";
-import Navbar from "../components/Header/Navbar";
+import Navbar2 from "../components/Header/Navbar2";
 import { useEffect, useState } from "react";
 import { useRental } from "../context/RentalContext";
 import { motion } from "framer-motion";
 //@ts-expect-error dsff
-import { fadeIn, textVariant } from "../utils/motion";
+import { fadeIn, } from "../utils/motion";
 import MapSelector from "../components/MapSelector";
 import "../index.css";
 const Item1 = () => {
@@ -68,7 +68,7 @@ const Item1 = () => {
 
   return (
     <div className="w-full flex flex-col almarai-extrabold justify-center items-center ">
-      <Navbar />
+      <Navbar2 />
       <motion.div
         className="w-[70%] flex flex-col gap-5 px-5 py-10"
         initial={{ opacity: 0 }}
@@ -89,23 +89,23 @@ const Item1 = () => {
               viewport={{ once: true }}
               className="flex flex-col items-center justify-center gap-2 w-full md:w-[48%] lg:w-auto"
             >
-              <div className="relative">
+              <div className="relative rounded-lg shadow-lg transition-transform duration-300 ease-in-out hover:scale-105 hover:shadow-xl ">
                 <img
                   src={item.image}
                   alt={item.title}
-                  className="lg:h-[210px] w-full rounded-lg shadow-lg transition-transform duration-300 ease-in-out hover:scale-105 hover:shadow-xl"
+                  className="lg:h-[210px] w-full "
                 />
                 {/* Price Overlay */}
-                <div className="absolute bottom-4 left-4 bg-primary text-white text-lg font-semibold px-3 py-2 rounded-lg shadow-md">
+                <div className="absolute left-4 mt-[10px] bg-primary text-white text-lg font-semibold px-3 py-2 rounded-lg shadow-md">
                   {item.price}
                 </div>
               </div>
               <span className="font-bold text-title text-[22px]">
                 {item.title}
               </span>
-              <div className="text-secondary">
+              {/* <div className="text-secondary">
                 <span className="font-semibold text-lg">{item.price}</span>
-              </div>
+              </div> */}
             </motion.div>
           ))}
         </div>
@@ -197,7 +197,7 @@ const Item1 = () => {
           <span
             className="mt-1 w-full h-[60px] px-3 font-bold text-center flex justify-center items-center text-white bg-primary  rounded-lg cursor-pointer transition-all duration-300 hover:scale-105 ease-in-out hover:bg-primary-dark hover:shadow-lg"
             onClick={() => {
-              const phone = "966508559192";
+              const phone = "966553116613";
               const mapLink = customLocation
                 ? `https://www.google.com/maps?q=${customLocation.lat},${customLocation.lng}`
                 : "لا يوجد موقع محدد";

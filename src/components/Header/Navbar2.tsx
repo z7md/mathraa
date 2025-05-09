@@ -3,11 +3,11 @@ import { HiMenu, HiX } from "react-icons/hi";
 import { motion } from "framer-motion";
 //@ts-expect-error dsff
 import { fadeIn } from "../../utils/motion"
-import { links} from "../../data";
+import { links1} from "../../data";
 import Image from "../../assets/images/logo-white.png"
 
 
-const Navbar: React.FC = () => {
+const Navbar2: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);
   const [activeLink, setActiveLink] = useState<string>("");
 
@@ -47,7 +47,7 @@ const Navbar: React.FC = () => {
           variants={fadeIn("down", 0.3)}
           className="hidden md:flex items-center gap-10"
         >
-          {links.map((link, index) => (
+          {links1.map((link, index) => (
             <motion.a
               key={index}
               variants={fadeIn("down", 0.1 * (index + 1))}
@@ -88,7 +88,7 @@ const Navbar: React.FC = () => {
             variants={fadeIn("down", 0.3)}
             className="container mx-auto px-4 space-y-4"
           >
-            {links.map((link, index) => (
+            {links1.map((link, index) => (
               <motion.a
                 key={index}
                 variants={fadeIn("right", 0.1 * (index + 1))}
@@ -123,4 +123,4 @@ const Navbar: React.FC = () => {
   );
 };
 
-export default Navbar;
+export default Navbar2;

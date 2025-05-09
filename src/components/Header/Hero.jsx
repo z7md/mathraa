@@ -2,9 +2,7 @@ import React from "react";
 import { motion } from "framer-motion";
 import { fadeIn, textVariant } from "../../utils/motion";
 import heroImage from "../../assets/images/Heroii.png"; // تأكد من مسار الصورة
-import { FaWhatsapp } from "react-icons/fa";
-import { IoCallOutline } from "react-icons/io5";
-import { SiGooglemaps } from "react-icons/si";
+
 
 const Hero = () => {
   return (
