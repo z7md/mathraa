@@ -10,14 +10,15 @@ const Hero = () => {
   return (
     <section
       id="home"
-      className="flex flex-col md:flex-row justify-between items-center px-4 sm:px-6 lg:px-8 pt-44 pb-16 container mx-auto mt-[81px]"
+      className="flex flex-col md:flex-row justify-between items-center px-4 sm:px-6 lg:px-8 pt-44 pb-16 container mx-auto  "
       style={{
         backgroundImage: `url(${heroImage})`,
         backgroundSize: 'cover',
         backgroundPosition: 'center',
         backgroundAttachment: 'fixed', // لتثبيت الصورة
         position: 'relative',
-        height: '100vh', // لضمان أن الصورة تغطي كامل الشاشة
+        height: '100vh',
+        width:"100vw" // لضمان أن الصورة تغطي كامل الشاشة
       }}
     >
       {/* Overlay to enhance text visibility */}
@@ -74,7 +75,7 @@ const Hero = () => {
         className="w-full md:w-1/2 mt-16 md:mt-0 pl-0 md:pl-12 relative z-20" // إضافة z-index هنا
       >
         <a
-          className="bg-primary w-full h-[60px] text-white font-bold uppercase mt-5 text-center flex justify-center items-center mb-[30px] md:mb-0"
+          className="bg-primary w-full h-[60px] text-white font-bold uppercase  text-center flex justify-center items-center mb-[100px] md:mb-0"
           href="#booking"
           style={{
             zIndex: 10, // اجعل الزر يظهر فوق الـ overlay

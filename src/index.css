@@ -52,6 +52,10 @@ body {
 	font-style: normal;
   }
 
+.leaflet-control-attribution{
+	display: none;
+}
+
   
 /* input[type="date"]::-webkit-calendar-picker-indicator {
 	display: none;

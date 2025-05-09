@@ -1,14 +1,17 @@
-
 import Footer from "../components/Footer";
-import t1 from "../assets/images/hawe2.png";
+import t2 from "../assets/images/hawe2.png";
 import Navbar from "../components/Header/Navbar";
 import { useEffect, useState } from "react";
+import { useRental } from "../context/RentalContext";
 import { motion } from "framer-motion";
 //@ts-expect-error dsff
-import { fadeIn } from "../utils/motion";
+import { fadeIn, textVariant } from "../utils/motion";
 import MapSelector from "../components/MapSelector";
-import { useRental } from "../context/RentalContext";
+import "../index.css";
 const Item1 = () => {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   const today = new Date().toISOString().split("T")[0];
   const [showMapTooltip, setShowMapTooltip] = useState(false);
   const {
@@ -17,26 +20,30 @@ const Item1 = () => {
     setRentalDate,
     setLocation,
     setCustomLocation,
-    customLocation
+    customLocation,
   } = useRental();
+
+  const [quan, setQuan] = useState(1);
 
   const getCurrentLocation = () => {
     if (navigator.geolocation) {
-      navigator.permissions.query({ name: "geolocation" }).then((permissionStatus) => {
-        if (permissionStatus.state === "granted") {
-          navigator.geolocation.getCurrentPosition(
-            (position) => {
-              const lat = position.coords.latitude;
-              const lng = position.coords.longitude;
-              setCustomLocation({ lat, lng });
-            },
-            (error) => {
-              console.error("Error getting location:", error);
-              alert("لم نتمكن من تحديد موقعك. " + error.message);
-            }
-          );
-        }
-      });
+      navigator.permissions
+        .query({ name: "geolocation" })
+        .then((permissionStatus) => {
+          if (permissionStatus.state === "granted") {
+            navigator.geolocation.getCurrentPosition(
+              (position) => {
+                const lat = position.coords.latitude;
+                const lng = position.coords.longitude;
+                setCustomLocation({ lat, lng });
+              },
+              (error) => {
+                console.error("Error getting location:", error);
+                alert("لم نتمكن من تحديد موقعك. " + error.message);
+              }
+            );
+          }
+        });
     } else {
       alert("الخرائط غير مدعومة في متصفحك");
     }
@@ -44,10 +51,10 @@ const Item1 = () => {
 
   useEffect(() => {
     if (location === "حدد على الخريطة") {
-      setShowMapTooltip(true);  // Show tooltip when the user selects "حدد على الخريطة"
+      setShowMapTooltip(true); // Show tooltip when the user selects "حدد على الخريطة"
       getCurrentLocation();
     } else {
-      setShowMapTooltip(false);  // Hide tooltip when the location is not "حدد على الخريطة"
+      setShowMapTooltip(false); // Hide tooltip when the location is not "حدد على الخريطة"
     }
   }, [location]);
 
@@ -56,8 +63,7 @@ const Item1 = () => {
   };
 
   const types = [
-    { title: "12 ياردة", price: "200 ريال", image: t1, type: "نوع 1" },
-  
+    { title: "12 ياردة", price: "200 ريال", image: t2, type: "نوع 1" },
   ];
 
   return (
@@ -98,11 +104,8 @@ const Item1 = () => {
                 {item.title}
               </span>
               <div className="text-secondary">
-                <span className="font-semibold text-lg">
-                  {item.price}
-                </span>
+                <span className="font-semibold text-lg">{item.price}</span>
               </div>
-            
             </motion.div>
           ))}
         </div>
@@ -131,7 +134,7 @@ const Item1 = () => {
                 onChange={(e) => {
                   const selected = e.target.value;
                   setLocation(selected);
-                if (selected === "حدد على الخريطة") {
+                  if (selected === "حدد على الخريطة") {
                     setCustomLocation(null); // سيختار المستخدم من الخريطة
                   } else {
                     setCustomLocation(null); // لا شيء محدد
@@ -139,17 +142,38 @@ const Item1 = () => {
                 }}
                 className="w-full h-[60px] rounded px-3 outline-none bg-white border-primary text-primary cursor-pointer appearance-none text-right border"
               >
-                <option value="اختر الموقع" disabled>اختر الموقع</option>
+                <option value="اختر الموقع" disabled>
+                  اختر الموقع
+                </option>
                 <option value="حدد على الخريطة">حدد على الخريطة</option>
               </select>
+
+              {/* Quantity Selector */}
+              <div className="flex flex-col w-full gap-2 mt-5">
+                <label className="text-primary font-medium">الكمية</label>
+                <select
+                  value={quan}
+                  onChange={(e) => setQuan(Number(e.target.value))}
+                  className="w-full h-[60px] rounded px-3 outline-none bg-white border-primary text-primary cursor-pointer text-right border"
+                >
+                  {Array.from({ length: 20 }, (_, i) => (
+                    <option key={i + 1} value={i + 1}>
+                      {i + 1}
+                    </option>
+                  ))}
+                </select>
+              </div>
             </div>
           </div>
 
           {/* Map Display */}
-          {(location === "حدد على الخريطة") && (
+          {location === "حدد على الخريطة" && (
             <div className="w-full h-[300px] rounded overflow-hidden mt-3">
               {showMapTooltip && (
-                <div className="fixed top-0 left-0 w-full bg-yellow-500 text-center text-white p-2 flex z-[100]" onClick={handleTooltipClose}>
+                <div
+                  className="fixed top-0 left-0 w-full bg-yellow-500 text-center text-white p-2 flex z-[100]"
+                  onClick={handleTooltipClose}
+                >
                   <span className="mr-6">
                     إذا قمت بالنقر مرتين على الخريطة، سيتم تحديد الموقع الحالي.
                   </span>
@@ -162,29 +186,33 @@ const Item1 = () => {
                 </div>
               )}
               {location === "حدد على الخريطة" ? (
-                <MapSelector onSelect={(lat, lng) => setCustomLocation({ lat, lng })} />
+                <MapSelector
+                  onSelect={(lat, lng) => setCustomLocation({ lat, lng })}
+                />
               ) : (
                 <MapSelector fixedLocation={{ lat: 26.32599, lng: 43.97497 }} />
               )}
             </div>
           )}
           <span
-            className="mt-1 font-bold text-center text-white bg-primary py-2 px-6 rounded-lg cursor-pointer transition-all duration-300 hover:scale-105 ease-in-out hover:bg-primary-dark hover:shadow-lg"
+            className="mt-1 w-full h-[60px] px-3 font-bold text-center flex justify-center items-center text-white bg-primary  rounded-lg cursor-pointer transition-all duration-300 hover:scale-105 ease-in-out hover:bg-primary-dark hover:shadow-lg"
             onClick={() => {
               const phone = "966508559192";
               const mapLink = customLocation
                 ? `https://www.google.com/maps?q=${customLocation.lat},${customLocation.lng}`
                 : "لا يوجد موقع محدد";
 
-              const message = `**طلب حجز حاوية**
+                const message = `**طلب حجز حاوية**
 
-                    **رابط الموقع:** ${mapLink}
-                    
-                    **تاريخ الإيجار:** ${rentalDate}
-                    
-                    **نوع الحاوية:** 
-                    
-                    تم إرسال هذا الطلب من الموقع.`;
+**رابط الموقع:** ${mapLink}
+                
+**تاريخ الإيجار:** ${rentalDate}
+                
+**نوع الحاوية:** 12 ياردة
+                
+**الكمية المطلوبة:** ${quan}
+                
+تم إرسال هذا الطلب من الموقع.`;
 
               const url = `https://wa.me/${phone}?text=${encodeURIComponent(
                 message

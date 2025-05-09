@@ -9,7 +9,7 @@ import Image from "../../assets/images/logo-white.png"
 
 const Navbar: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);
-  const [activeLink, setActiveLink] = useState<string>("#home");
+  const [activeLink, setActiveLink] = useState<string>("");
 
 
   return (

@@ -36,6 +36,10 @@ const Types: FC = () => {
                 <img
                   src={item.image}
                   alt={item.title}
+                  onClick={() => {
+                    navigate("/mathraa/item"+(index+1))
+                  }}
+
                   className="lg:h-[210px] w-full rounded-lg shadow-lg transition-transform duration-300 ease-in-out hover:scale-105 hover:shadow-xl"
                 />
                 {/* Price Overlay */}
