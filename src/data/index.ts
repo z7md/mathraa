@@ -167,11 +167,11 @@ export const services = [
 ];
 
 export const links = [
-  { label: "الصفحة الرئيسية", href: "/car_rent#home/" },
-  { label: "أطلب حاوية", href: "/car_rent#booking" },
-  { label: "من نحن", href: "/car_rent#about" },
-  { label: "أراء العملاء", href: "/car_rent#testimonials" },
-  { label: "تواصل معنا", href: "/car_rent#contact" },
+  { label: "الصفحة الرئيسية", href: "/mathraa#home/" },
+  { label: "أطلب حاوية", href: "/mathraa#booking" },
+  { label: "من نحن", href: "/mathraa#about" },
+  { label: "أراء العملاء", href: "/mathraa#testimonials" },
+  { label: "تواصل معنا", href: "/mathraa#contact" },
 ];
 export const selects = [
 

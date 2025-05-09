@@ -55,7 +55,7 @@ const Types: FC = () => {
               <span
                 className="mt-1 p-2 font-bold text-white bg-primary py-2 px-6 rounded-lg cursor-pointer transition-all duration-300 hover:scale-105 ease-in-out hover:bg-primary-dark hover:shadow-lg"
                 onClick={() => {
-                  navigate("/car_rent/item"+(index+1))
+                  navigate("/mathraa/item"+(index+1))
                 }}
               >
                 أطلب الآن
