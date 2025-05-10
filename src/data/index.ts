@@ -132,9 +132,9 @@ export const links = [
   // { label: "أراء العملاء", href: "#testimonials" },
 ];
 export const links1 = [
-  { label: "الصفحة الرئيسية", href: "/mathraa" },
-  { label: "أطلب حاوية", href: "/mathraa/booking" },
-  { label: "من نحن", href: "/mathraa/about" },
+  { label: "الصفحة الرئيسية", href: "/" },
+  { label: "أطلب حاوية", href: "/booking" },
+  { label: "من نحن", href: "/about" },
   // { label: "أراء العملاء", href: "/mathraa/testimonials" },
 ];
 export const selects = [

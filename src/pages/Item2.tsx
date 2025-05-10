@@ -70,7 +70,7 @@ const Item1 = () => {
     <div className="w-full flex flex-col almarai-extrabold justify-center items-center ">
       <Navbar2 />
       <motion.div
-        className="w-[70%] flex flex-col gap-5 px-5 py-10"
+        className="w-full flex flex-col gap-5 px-5 py-10"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 1 }}

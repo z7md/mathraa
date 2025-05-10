@@ -38,7 +38,7 @@ const Types: FC = () => {
                   alt={item.title}
 
                   onClick={() => {
-                    navigate("/mathraa/item"+(index+1))
+                    navigate("/item"+(index+1))
                   }}
 
                   className=" w-full rounded-lg shadow-lg transition-transform duration-300 ease-in-out hover:scale-105 hover:shadow-xl cursor-pointer"
@@ -60,7 +60,7 @@ const Types: FC = () => {
               <span
                 className="mt-1 p-2 font-bold text-white bg-primary py-4 px-8 rounded-lg cursor-pointer transition-all duration-300 hover:scale-105 ease-in-out hover:bg-primary-dark hover:shadow-lg"
                 onClick={() => {
-                  navigate("/mathraa/item"+(index+1))
+                  navigate("/item"+(index+1))
                 }}
               >
                 أطلب الآن
