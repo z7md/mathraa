@@ -129,13 +129,13 @@ export const links = [
   { label: "الصفحة الرئيسية", href: "#home" },
   { label: "أطلب حاوية", href: "#booking" },
   { label: "من نحن", href: "#about" },
-  { label: "أراء العملاء", href: "#testimonials" },
+  // { label: "أراء العملاء", href: "#testimonials" },
 ];
 export const links1 = [
   { label: "الصفحة الرئيسية", href: "/mathraa" },
   { label: "أطلب حاوية", href: "/mathraa/booking" },
   { label: "من نحن", href: "/mathraa/about" },
-  { label: "أراء العملاء", href: "/mathraa/testimonials" },
+  // { label: "أراء العملاء", href: "/mathraa/testimonials" },
 ];
 export const selects = [
   {

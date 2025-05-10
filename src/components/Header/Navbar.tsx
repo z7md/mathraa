@@ -2,15 +2,13 @@ import React, { useState } from "react";
 import { HiMenu, HiX } from "react-icons/hi";
 import { motion } from "framer-motion";
 //@ts-expect-error dsff
-import { fadeIn } from "../../utils/motion"
-import { links} from "../../data";
-import Image from "../../assets/images/logo-white.png"
-
+import { fadeIn } from "../../utils/motion";
+import { links } from "../../data";
+import Image from "../../assets/images/logo-white.png";
 
 const Navbar: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);
   const [activeLink, setActiveLink] = useState<string>("");
-
 
   return (
     <motion.nav
@@ -39,7 +37,11 @@ const Navbar: React.FC = () => {
           className="md:hidden p-2 cursor-pointer"
           onClick={() => setIsMenuOpen(!isMenuOpen)}
         >
-          {isMenuOpen ? <HiX className="h-6 w-6" /> : <HiMenu className="h-6 w-6" />}
+          {isMenuOpen ? (
+            <HiX className="h-6 w-6" />
+          ) : (
+            <HiMenu className="h-6 w-6" />
+          )}
         </motion.button>
 
         {/* Desktop Navigation */}
@@ -70,7 +72,7 @@ const Navbar: React.FC = () => {
           variants={fadeIn("left", 0.3)}
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
-          className="hidden md:block bg-primary text-white px-6 py-2.5 rounded-lg hover:bg-red-700 text-sm font-medium transition-all hover:shadow-lg hover:shadow-red-100 cursor-pointer"
+          className="hidden md:block bg-primary text-white px-6 py-2.5 rounded-lg hover:shadow-primary text-sm font-medium transition-all hover:shadow-lg cursor-pointer"
         >
           <a href="tel:+966553116613">اتصل بنا الآن</a>
         </motion.button>
