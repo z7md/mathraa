@@ -28,7 +28,7 @@ const App = () => {
   }, [navigate]);
 
   return (
-    <div className="w-full flex flex-col almarai-extrabold max-w-screen">
+    <div className="flex flex-col almarai-extrabold w-full">
       <Navbar />
       <Hero />
       <Types />

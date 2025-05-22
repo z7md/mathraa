@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import { FaWhatsapp } from "react-icons/fa";
 import { SiGooglemaps } from "react-icons/si";
 import { IoCallOutline } from "react-icons/io5";
-import Image from "../../assets/images/logo-white.png";
+import Image from "../../assets/images/logo-white.webp";
 //@ts-expect-error dsff
 import { fadeIn } from "../../utils/motion";
 
@@ -22,10 +22,7 @@ const Footer: FC = () => {
           className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-8 lg:gap-12"
         >
           {/* Brand/Logo + Description + Icons */}
-          <motion.div
-            variants={fadeIn("right", 0.4)}
-            className="lg:col-span-4 flex flex-col"
-          >
+          <motion.div className="lg:col-span-4 flex flex-col">
             <img
               src={Image}
               alt="logo"
@@ -44,6 +41,7 @@ const Footer: FC = () => {
                 whileHover={{ scale: 1.1 }}
                 href="tel:+966553116613"
                 className="w-10 h-10 bg-gray-200 rounded-full flex items-center justify-center text-gray-600 hover:bg-red-600 hover:text-white transition-colors"
+                aria-label="Call Us" // Added aria-label
               >
                 <IoCallOutline className="w-5 h-5" />
               </motion.a>
@@ -51,6 +49,7 @@ const Footer: FC = () => {
                 whileHover={{ scale: 1.1 }}
                 href="https://wa.me/966553116613"
                 className="w-10 h-10 bg-gray-200 rounded-full flex items-center justify-center text-gray-600 hover:bg-green-500 hover:text-white transition-colors"
+                aria-label="Chat with us on WhatsApp" // Added aria-label
               >
                 <FaWhatsapp className="w-5 h-5" />
               </motion.a>
@@ -58,6 +57,7 @@ const Footer: FC = () => {
                 whileHover={{ scale: 1.1 }}
                 href="https://maps.app.goo.gl/wAiS7hjF43SUVmVF8?g_st=ic"
                 className="w-10 h-10 bg-gray-200 rounded-full flex items-center justify-center text-gray-600 hover:bg-blue-500 hover:text-white transition-colors"
+                aria-label="View location on Google Maps" // Added aria-label
               >
                 <SiGooglemaps className="w-5 h-5" />
               </motion.a>
@@ -71,9 +71,9 @@ const Footer: FC = () => {
           >
             {/* Links Section */}
             <div>
-              <h4 className="text-lg font-bold text-primary mb-4">
+              <h2 className="text-lg font-bold text-primary mb-4">
                 روابط مهمة
-              </h4>
+              </h2>
               <ul className="space-y-3 text-[16px] text-gray-700 font-medium">
                 <motion.li whileHover={{ x: 5 }}>
                   <a
@@ -112,9 +112,9 @@ const Footer: FC = () => {
 
             {/* Certifications Section */}
             <div>
-              <h4 className="text-lg font-bold text-primary mb-4">
+              <h3 className="text-lg font-bold text-primary mb-4">
                 الشهادات والرخص
-              </h4>
+              </h3>
               <ul className="space-y-3 text-[16px] text-gray-700 font-medium">
                 <motion.li whileHover={{ x: 5 }}>
                   <a
@@ -166,7 +166,7 @@ const Footer: FC = () => {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-           Hamad Almohaimeed
+                Hamad Almohaimeed
               </a>
             </span>
           </motion.div>

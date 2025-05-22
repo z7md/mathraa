@@ -1,6 +1,6 @@
 
-import t1 from "../assets/images/hawe1.png";
-import t2 from "../assets/images/hawe2.png";
+import t1 from "../assets/images/hawe1.webp";
+import t2 from "../assets/images/hawe2.webp";
 // import t3 from "../assets/images/t3.png";
 // import t4 from "../assets/images/t4.png";
 // import t5 from "../assets/images/t5.png";

@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 //@ts-expect-error dsff
 import { fadeIn } from "../../utils/motion";
 import { links } from "../../data";
-import Image from "../../assets/images/logo-white.png";
+import Image from "../../assets/images/logo-white.webp";
 
 const Navbar: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);
@@ -31,11 +31,11 @@ const Navbar: React.FC = () => {
           />
         </motion.div>
 
-        {/* Mobile Menu Toggle */}
         <motion.button
           variants={fadeIn("left", 0.3)}
           className="md:hidden p-2 cursor-pointer"
           onClick={() => setIsMenuOpen(!isMenuOpen)}
+          aria-label={isMenuOpen ? "Close menu" : "Open menu"} // Added aria-label for accessibility
         >
           {isMenuOpen ? (
             <HiX className="h-6 w-6" />
